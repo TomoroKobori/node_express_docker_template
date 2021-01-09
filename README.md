@@ -30,6 +30,7 @@ MYSQL_PASSWORD=mysqlユーザパスワード
 MYSQL_DATABASE=データベース名
 ```
 ## 3. dockerイメージのビルドとコンテナの作成
+- docker-copose.ymlの `image` と `container_name` を変更
 - 下記を実行
 ```
 docker-compose up(-- build)
