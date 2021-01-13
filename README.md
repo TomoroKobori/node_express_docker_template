@@ -81,6 +81,8 @@ docker-compose exec app npx sequelize init
 ```
 
 ### 8. マイグレーション
+- マイグレーションファイルを作成
+- マイグレーション実行
 ```
 docker-compose exec app node_modules/.bin/sequelize db:migrate
 ```
