@@ -10,7 +10,7 @@ services:
       - MYSQL_PASSWORD=mysql_pass
       - MYSQL_DATABASE=mysql_database
     ports:
-      - '13306:3306'
+      - '3306:3306'
     volumes:
       - ./mysql/conf:/etc/mysql/conf.d/:ro
       - mysqldata:/var/lib/mysql
