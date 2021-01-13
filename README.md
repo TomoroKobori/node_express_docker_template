@@ -56,3 +56,31 @@ docker-compose exec  app npm install --save nodemon
 command: [sh, -c, npm install && npm run watch]
 ```
 - docker-composeを再起動
+
+## 6. sequelizeを追加
+- 必要パッケージをインストール
+```
+docker-compose exec app npm install --save sequelize
+docker-compose exec app npm install --save mysql2
+docker-compose exec app npm install --save sequelize-cli
+```
+
+## 7. sequelizeの設定
+- 下記コマンドを事項
+```
+# Sequelizeの初期化
+docker-compose exec app npx sequelize init
+```
+- `myqpp/config/config.json` に下記を記述
+```
+"username":DBユーザ名,
+"password": DBユーザパスワード,
+"database": データベース名,
+"host": MYSQL_SERVER,
+"dialect": "mysql"
+```
+
+### 8. マイグレーション
+```
+docker-compose exec app node_modules/.bin/sequelize db:migrate
+```
